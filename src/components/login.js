@@ -1,10 +1,24 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Header from "./Header";
+import { checkValidData } from "../utils/validation";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
+  const [errorMessage,setErrorMessage]=useState(null);
+  const email=useRef(null);
+  const password=useRef(null);
+  const name=useRef(null);
   function toogleSignInForm() {
     setIsSignInForm(!isSignInForm);
+  }
+
+  function handleButtonClick(e)
+  {
+    e.preventDefault();
+    // validate the form Data
+    const message=checkValidData(email.current.value,password.current.value);
+    setErrorMessage(message);
+    // SignIn or SignUp
   }
   return (
     <div>
@@ -22,21 +36,25 @@ const Login = () => {
         {!isSignInForm && (
           <input
             type="text"
+            ref={name}
             placeholder="Full Name"
             className="p-4 my-2 w-full bg-gray-700"
           />
         )}
         <input
           type="text"
+        ref={email}
           placeholder="Email Address"
           className="p-4 my-2 w-full bg-gray-700"
         />
         <input
           type="password"
+          ref={password}
           placeholder="Password"
           className="p-4 my-2 w-full bg-gray-700"
         />
-        <button className="p-4 my-4 bg-red-700 w-full rounded-lg">
+        <p className="text-red-500 text-lg py-2">{errorMessage}</p>
+        <button className="p-4 my-4 bg-red-700 w-full rounded-lg" onClick={handleButtonClick}>
           {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
         <p className="py-4 cursor-pointer" onClick={toogleSignInForm}>
