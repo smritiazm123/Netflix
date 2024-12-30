@@ -13,6 +13,9 @@
 - Create SignUp User Account
 - Implement Sign In user Api
 - Created Redux Store with userSlice
+- Implemented SignOut
+- Update Profile Api also
+<!-- - Ftech Movies from TMDB -->
 
 # Features
 - Login/Sign Up
