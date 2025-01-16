@@ -18,7 +18,9 @@
 - BugFix : Sign up user displayName and profile picture update
 - BugFix : if the user is not logged in Redirect /browse to Login Page and vive-versa
 - Unsubscribe to the onAuthStateChanged calling
-- Add hardcoded values to the constants
+- Add hardcoded values to the constantsTMDB API & create an app and get access token
+- Get Data from TMDB now playing movies list API 
+- 
 <!-- - Ftech Movies from TMDB -->
 
 # Features
