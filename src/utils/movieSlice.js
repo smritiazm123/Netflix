@@ -10,6 +10,10 @@ const moviewSlice=createSlice({
         {
             state.nowPlayingMovies=action.payload;
         },
+        addPopularMovies:(state,action)=>
+        {
+            state.addPopularMovies=action.payload;
+        },
         addTrailerVideo:(state,action)=>
         {
             state.trailerVideo=action.payload
@@ -18,5 +22,5 @@ const moviewSlice=createSlice({
 });
 
 
-export const {addNowPlayingMovies,addTrailerVideo}=moviewSlice.actions
+export const {addNowPlayingMovies,addTrailerVideo,addPopularMovies}=moviewSlice.actions
 export default moviewSlice.reducer;
